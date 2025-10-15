@@ -1,5 +1,5 @@
 # portainer_api_backupper
-bash script to backup all portainer stack compose files and a regular backup of portainer  
+bash script to backup all portainer stack compose files and a regular backup of portainer via portainer API
 > [!WARNING]
 > **volumes are not included**  
 

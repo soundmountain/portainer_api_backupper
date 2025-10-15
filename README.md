@@ -27,11 +27,18 @@ CURL_RETRY_ALL_ERRORS=1
 # optional, when using a self signed certificate: 
 #CURL_INSECURE=1
 ```
-## harden the file a little bit 
+## harden the env file 
 ```bash
 chmod 700 /path/to/env/folder
 chmod 600 /path/to/env/folder/.env
 ```
+## edit the script
+Populate the config-section with the path to the .env file
+```bash
+# ====== CONFIG ======
+ENV_FILE="/path/to/env/folder/.env"
+```
+
 ##  run the script
 ```bash
 chmod +x portainer_api_backupper.sh

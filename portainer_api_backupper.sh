@@ -207,4 +207,10 @@ echo "$stacks_json" | jq -c '.[]' | while read -r stack; do
   fi
 done
 
+if [ "${CLEANUP_BACKUP}" = "true" ]; then
+    MTIME="${KEEP_BACKUPS:-7}"
+    echo "cleaning up old backups (mtime +${MTIME})"
+    find "$BACKUP_DIR" -mindepth 1 -maxdepth 1 -type d -mtime "+$MTIME" -exec echo "removing: {}" \; -exec rm -rf {} \;
+fi
+
 echo "✓ Done! Backups located in: ${OUT_DIR}"
